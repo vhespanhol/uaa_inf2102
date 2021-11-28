@@ -1,0 +1,264 @@
+   +--------------------------------------------+
+   |      2-D & 2-PHASE RESERVOIR SIMULATOR     |
+   |                                            |
+   |         The University of Tulsa            |
+   |         Petroleum Engineering              |
+   |         Reservoir Simulation I             |
+   |         Prof. Al Reynolds                  |
+   |         Alexandre Emerick                  |
+   |                                            |
+   |       Version 2.1.0, August 2011        |
+   +--------------------------------------------+
+
+MODEL  : UA_INJ_base_00001.dat
+WORKDIR: E:\Dropbox\CodeBunker\MESTRADO\S3_PFP\UAA\projects\UA_INJ\RUN\base_00001\
+
+Nx   = 15
+Ny   = 30
+VOIP = 5102798.12 STB
+
+-------------------------------------------
+REPORT STEP # 1
+    Report step size   :  120 days
+    Cumulative time    :  120 days
+    Date               : 2008-4-30
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2745.9 psi
+
+-------------------------------------------
+REPORT STEP # 2
+    Report step size   :  150 days
+    Cumulative time    :  270 days
+    Date               : 2008-9-27
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2724.4 psi
+
+-------------------------------------------
+REPORT STEP # 3
+    Report step size   :  150 days
+    Cumulative time    :  420 days
+    Date               : 2009-2-24
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2725.3 psi
+
+-------------------------------------------
+REPORT STEP # 4
+    Report step size   :  150 days
+    Cumulative time    :  570 days
+    Date               : 2009-7-24
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2727.3 psi
+
+-------------------------------------------
+REPORT STEP # 5
+    Report step size   :  150 days
+    Cumulative time    :  720 days
+    Date               : 2009-12-21
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2729.1 psi
+
+-------------------------------------------
+REPORT STEP # 6
+    Report step size   :  150 days
+    Cumulative time    :  870 days
+    Date               : 2010-5-20
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2730.5 psi
+
+-------------------------------------------
+REPORT STEP # 7
+    Report step size   :  150 days
+    Cumulative time    : 1020 days
+    Date               : 2010-10-17
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2731.7 psi
+
+-------------------------------------------
+REPORT STEP # 8
+    Report step size   :  150 days
+    Cumulative time    : 1170 days
+    Date               : 2011-3-16
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2732.7 psi
+
+-------------------------------------------
+REPORT STEP # 9
+    Report step size   :  150 days
+    Cumulative time    : 1320 days
+    Date               : 2011-8-13
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2733.6 psi
+
+-------------------------------------------
+REPORT STEP # 10
+    Report step size   :  150 days
+    Cumulative time    : 1470 days
+    Date               : 2012-1-10
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2734.4 psi
+
+-------------------------------------------
+REPORT STEP # 11
+    Report step size   :  150 days
+    Cumulative time    : 1620 days
+    Date               : 2012-6-8
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2735.0 psi
+
+-------------------------------------------
+REPORT STEP # 12
+    Report step size   :  150 days
+    Cumulative time    : 1770 days
+    Date               : 2012-11-5
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2735.7 psi
+
+-------------------------------------------
+REPORT STEP # 13
+    Report step size   :  150 days
+    Cumulative time    : 1920 days
+    Date               : 2013-4-4
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2736.2 psi
+
+-------------------------------------------
+REPORT STEP # 14
+    Report step size   :  150 days
+    Cumulative time    : 2070 days
+    Date               : 2013-9-1
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2736.7 psi
+
+-------------------------------------------
+REPORT STEP # 15
+    Report step size   :  150 days
+    Cumulative time    : 2220 days
+    Date               : 2014-1-29
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2737.2 psi
+
+-------------------------------------------
+REPORT STEP # 16
+    Report step size   :  150 days
+    Cumulative time    : 2370 days
+    Date               : 2014-6-28
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2737.6 psi
+
+-------------------------------------------
+REPORT STEP # 17
+    Report step size   :  150 days
+    Cumulative time    : 2520 days
+    Date               : 2014-11-25
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2738.0 psi
+
+-------------------------------------------
+REPORT STEP # 18
+    Report step size   :  150 days
+    Cumulative time    : 2670 days
+    Date               : 2015-4-24
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2738.4 psi
+
+-------------------------------------------
+REPORT STEP # 19
+    Report step size   :  150 days
+    Cumulative time    : 2820 days
+    Date               : 2015-9-21
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2738.7 psi
+
+-------------------------------------------
+REPORT STEP # 20
+    Report step size   :  150 days
+    Cumulative time    : 2970 days
+    Date               : 2016-2-18
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2739.0 psi
+
+-------------------------------------------
+REPORT STEP # 21
+    Report step size   :  150 days
+    Cumulative time    : 3120 days
+    Date               : 2016-7-17
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2739.3 psi
+
+-------------------------------------------
+REPORT STEP # 22
+    Report step size   :  150 days
+    Cumulative time    : 3270 days
+    Date               : 2016-12-14
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2739.6 psi
+
+-------------------------------------------
+REPORT STEP # 23
+    Report step size   :  150 days
+    Cumulative time    : 3420 days
+    Date               : 2017-5-13
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2739.8 psi
+
+-------------------------------------------
+REPORT STEP # 24
+    Report step size   :  150 days
+    Cumulative time    : 3570 days
+    Date               : 2017-10-10
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2740.1 psi
+
+-------------------------------------------
+REPORT STEP # 25
+    Report step size   :  150 days
+    Cumulative time    : 3720 days
+    Date               : 2018-3-9
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+    Average pressure   : 2740.3 psi
+
+-------------------------------------------
+GLOBAL MASS BALANCE:
+    Oil mass balance   : 1.000
+    Water mass balance : 1.000
+
+CUMULATIVE PRODUCTION:
+    Time             : 3720 days
+    Date             : 2018-3-9
+    Oil production   : 7.675E+05 STB
+    Water production : 2.058E+05 STB
+    Water injection  : 8.464E+05 STB
+    Average pressure : 2740.3 psi
+Output files:
+   UA_INJ_base_00001.well
+   UA_INJ_base_00001.sw
+   UA_INJ_base_00001.pres
+   UA_INJ_base_00001.debug
+
+Elapsed time: 3.69 sec.
+Solver time : 2.38 sec.

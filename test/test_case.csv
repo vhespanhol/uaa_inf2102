@@ -1,0 +1,18 @@
+﻿class;method;descrição;resultado esperado;Resultado;Status;p1;p2;p3;p4;p5;p6;p7;p8
+Case;readTemp;caminho válido para template;Nenhuma mensagem;;ok;caso0;E:\Dropbox\CodeBunker\MESTRADO\S3_PFP\UAA\projects\reservoir\model.dat;;;;;;
+Case;readTemp;caminho inválido para template;Mensagem de erro;Error 4: File/Path not found;ok;caso0;asdfadf;;;;;;
+Np;calc;Cálculo do Np para data inicial zero;30000;30000;ok;of1;0;120;;;;;
+Np;calc;Cálculo do Np para data inicial não nula;475460;475460;ok;of2;120;3270;;;;;
+Np;calc;Data inicial maior que final;Mensagem de erro;Error 5: Invalid date.;ok;of3;3720;120;;;;;
+Np;calc;Data não simulada;Mensagem de erro;Error 5: Invalid date.;ok;of4;0;1000000;;;;;
+Wp;calc;Cálculo do Wp para data inicial zero;0;0;ok;of1;0;120;;;;;
+Wp;calc;Cálculo do Wp para data inicial não nula;312040;312040;ok;of2;120;3270;;;;;
+Wp;calc;Data inicial maior que final;Mensagem de erro;Error 5: Invalid date.;ok;of3;3720;120;;;;;
+Wp;calc;Data não simulada;Mensagem de erro;Error 5: Invalid date.;ok;of4;0;1000000;;;;;
+Study;designExp;Número de parâmetros 1 e amostras válido;Gerar DOE;DOE gerado corretamente;ok;std1;5;1;;;;;
+Study;designExp;Número de parâmetros válido  e amostras 1;Gerar DOE;DOE gerado corretamente;ok;std2;1;5;;;;;
+Study;designExp;Número de parâmetros e amostras válido;Gerar DOE;DOE gerado corretamente;ok;std3;5;5;;;;;
+Study;designExp;Número de parâmetros zero;lista vazia;lista vazia;ok;std4;5;0;;;;;
+Study;designExp;Número de amostras zero;erro;erro;ok;std5;0;5;;;;;
+Study;designExp;Número de parâmetros negativo;erro;erro;ok;std4;5;-1;;;;;
+Study;designExp;Número de amostras negativo;erro;erro;ok;std5;-1;5;;;;;
