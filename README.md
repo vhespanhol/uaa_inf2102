@@ -1,5 +1,6 @@
 # Uncertainty Analysis Assistant
 
+Ferramenta para Análise de Incertezas de Reservatórios.
 Trabalho da disciplina 'Projeto Final de Programação' (INF2102) - DI/PUC-Rio.
 
 ## Baixar repositório
