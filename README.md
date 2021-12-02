@@ -31,6 +31,7 @@ ua01.initUA()
 
 ## Descrição dos diretórios e arquivos principais
 ```sh
+doc: documentação da ferramenta.
 classes: diretório com todas as classes implementadas.
 UAA.ipynb: notebook com exemplo de execução de um estudo.
 projects/reservoir: diretório com template e arquivos do modelo de reservatórios. 
