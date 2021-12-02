@@ -1,6 +1,16 @@
+'''
+    File name: case.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
+
 from  .toolkit.tools import errorMessage
 
 ## Class Study
+# - classe representa um caso de estudo, possuondo 
+# um template de modelo associado
 class Case:
     def __init__(self, cName, ftemp, template = None):     
         self.cName = cName # Case name
@@ -10,6 +20,7 @@ class Case:
         else:
             self.template = template # template model
 
+    # Lê template do modelo associado ao caso
     def readTemp(self):
         temps = []
 
@@ -20,17 +31,11 @@ class Case:
                     #print(row)
                     for line in file:
                         tpl.append(line)
-            except EnvironmentError: # parent of IOError, OSError *and* WindowsError where available
+            except EnvironmentError:
                 errorMessage(4)
                 return            
             temps.append(tpl)
         
         self.template = temps
         return
-        
-    # def getPar(self):
-    #     pars = []
-    #     for row in self.template[0]:
-    #         if '@' in row:
-    #             pars.append(row.split('@')[1])
-    #     return pars
+

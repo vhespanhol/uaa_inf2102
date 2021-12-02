@@ -1,3 +1,10 @@
+'''
+    File name: objfunction.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
 import numpy as np
 import pandas as pd
 from datetime import datetime
@@ -5,6 +12,7 @@ from  .toolkit.tools import errorMessage
 
 
 ## Class ObjFunction (Objective Function) 
+# - Classe cria funções objetivo e define métodos de cálculo
 class ObjFunction:
     def __init__(self, ofName, ini, end, delta = False):     
         self.ofName = ofName # objective function name
@@ -19,6 +27,7 @@ class Np(ObjFunction):
         super().__init__(ofName, ini, end, delta)
         pass
     
+    # método de cálculo da produção acumulada de óleo
     def calc(self,df):
         selcols = [x for x in df.columns if '[OPR]' in x] 
         t = df.index.values.copy()
@@ -41,7 +50,7 @@ class Wp(ObjFunction):
     def __init__(self, ofName, ini, end, delta = False):
         super().__init__(ofName, ini, end, delta)
         pass
-    
+    # método de cálculo da produção acumulada de água
     def calc(self,df):
         selcols = [x for x in df.columns if '[WPR]' in x] 
         t = df.index.values.copy()

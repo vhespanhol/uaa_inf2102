@@ -1,15 +1,14 @@
-#from __future__ import with_statement
+'''
+    File name: tools.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
 import pickle
-#import numpy as np
-#from pyDOE import lhs
-#from scipy.stats.distributions import norm, truncnorm, lognorm, uniform
-#import matplotlib.pyplot as plt
-#import subprocess
-#import pandas as pd
 import os
-#from datetime import datetime
-#import plotly.express as px
 
+# Mensagens de erro padronizadas
 def errorMessage(error):
     errorMessage = {
         1: 'name already used',
@@ -22,19 +21,7 @@ def errorMessage(error):
     }
     return print('Error %d: %s.' % (error,errorMessage[error]))
 
+# Função para criação de diretórios
 def createFolder(dirName):
     if not os.path.exists(dirName):
         os.mkdir(dirName)
-        #print("Directory " , dirName ,  " Created ")
-    #else:    
-        #print("Directory " , dirName ,  " already exists")
-
-# def saveClass(var,fname):
-#     with open(fname, 'wb') as f:
-#         pickle.dump(var, f, pickle.HIGHEST_PROTOCOL)
-#     return
-
-# def loadClass(fname):
-#     with open(fname, 'rb') as f:
-#         cls = pickle.load(f)
-#     return cls

@@ -1,3 +1,11 @@
+'''
+    File name: study.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
+
 import pickle
 import numpy as np
 from pyDOE import lhs
@@ -5,6 +13,12 @@ import pandas as pd
 from  .toolkit.tools import errorMessage
 
 ## Class Study
+# - Monta estudo de análise de incertezas, consistido de:
+#   - numero de amostras
+#   - parâmetros
+#   - casos
+#   - funções objetivo
+#   - tabela de experimentos
 class Study:
     def __init__(self, stName,path, nsamples,experiments = None, parameters = None, cases = None,objFuncs = None):
         self.stName = stName # Study name
@@ -76,7 +90,6 @@ class Study:
                     self.ncases -=1
                     print('Case "%s" sucessfully removed.' % (parname))
 
-
     # Add OF to Study    
     def addOF(self,of):
         if of.ofName not in [aux.ofName for aux in self.objFuncs]:
@@ -109,6 +122,6 @@ class Study:
             design[:, i] = self.parameters[i].applyDist(design[:, i])
         self.experiments = design
     
-    # Change base case
-    def changeBase(self):
-        self.baseFirst = not self.baseFirst
+    # # Change base case
+    # def changeBase(self):
+    #     self.baseFirst = not self.baseFirst

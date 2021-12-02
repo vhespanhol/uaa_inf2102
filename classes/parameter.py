@@ -1,8 +1,17 @@
+'''
+    File name: parameter.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
+
 import numpy as np
 from scipy.stats.distributions import norm, truncnorm, lognorm, uniform
 
 
 ## Class Parameter
+# - parâmetros do estudo de análise de incertezas
 class Parameter:
     def __init__(self, pName):
         self.pName = pName
@@ -15,6 +24,7 @@ class NormalP(Parameter):
         self.mean = mean
         self.stdev = stdev
     
+    # gera amostras considerando a distribuição de probabilidades do parâmetro
     def applyDist(self,arr): 
         return norm(loc=self.mean, scale=self.stdev).ppf(arr)
 
@@ -24,7 +34,8 @@ class UniformP(Parameter):
         super().__init__(pName)
         self.maxv = maxv
         self.minv = minv
-    
+
+    # gera amostras considerando a distribuição de probabilidades do parâmetro
     def applyDist(self,arr):
         return uniform(loc=self.minv, scale=self.maxv-self.minv).ppf(arr)
     
@@ -37,6 +48,7 @@ class TruncNormalP(Parameter):
         self.maxv = maxv
         self.minv = minv
     
+    # gera amostras considerando a distribuição de probabilidades do parâmetro
     def applyDist(self,arr):
         a = (self.minv - self.mean)/self.stdev
         b = (self.maxv - self.mean)/self.stdev
@@ -49,6 +61,7 @@ class LognormalP(Parameter):
         self.mean = mean
         self.stdev = stdev
     
+    # gera amostras considerando a distribuição de probabilidades do parâmetro
     def applyDist(self,arr):
         scale = np.exp(self.mean)
         return lognorm(s=self.stdev, scale=scale).ppf(arr)

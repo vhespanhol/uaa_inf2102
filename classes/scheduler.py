@@ -1,16 +1,19 @@
-#from __future__ import with_statement
+'''
+    File name: scheduler.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
+
 import pickle
 import numpy as np
-#from pyDOE import lhs
-#from scipy.stats.distributions import norm, truncnorm, lognorm, uniform
-#import matplotlib.pyplot as plt
-#import subprocess
 import pandas as pd
-#import os
-#from datetime import datetime
 from  .toolkit.tools import errorMessage, createFolder
 from .model import Simulator
 
+## Class Scheduler
+# - responsável por controlar a criação, submissão e extração dos resultados das simulações
 class Scheduler:
     def __init__(self, stdpath,results = None, models = None): #, jobs = 0):
         self.stdpath = stdpath
@@ -24,12 +27,13 @@ class Scheduler:
             self.models = []
         else:
             self.models = models 
-            
+
+    # Carrega estudo salvo        
     def loadStudy(self):
         try:
             with open(self.stdpath, 'rb') as inp:
                 self.std = pickle.load(inp)
-        except EnvironmentError: # parent of IOError, OSError *and* WindowsError where available
+        except EnvironmentError: 
             errorMessage(4)
             return
         
@@ -95,6 +99,7 @@ class Scheduler:
         print('Study is ready.')
         return
     
+    # Submete simulações e extrai resultados
     def runStudy(self):
         cns=[]
         for case in self.std.cases:
@@ -131,7 +136,7 @@ class Scheduler:
                     self.results[ofun.ofName+'_Delta'] = ofvalues[:,0]-ofvalues[:,1]
         return
     
-    # Save Results                
+    # Salva Resultados                
     def save(self):
         with open(self.stdpath.replace('study.cls','results.cls'), 'wb') as f:
             pickle.dump(self, f, pickle.HIGHEST_PROTOCOL)            

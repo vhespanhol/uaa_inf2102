@@ -1,19 +1,23 @@
-#from __future__ import with_statement
+'''
+    File name: analysis.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
+
 import pickle
 import numpy as np
-#from scipy.stats.distributions import norm, truncnorm, lognorm, uniform
 import matplotlib.pyplot as plt
-#import subprocess
 import pandas as pd
-#import os
-#from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.figure_factory as ff
-
 from  .toolkit.tools import errorMessage
 
+## Class Analysis
+# - realiza análise dos resultados
 class Analysis:
     def __init__(self, respath):
         self.respath = respath
@@ -22,9 +26,6 @@ class Analysis:
         #try:
         with open(self.respath, 'rb') as inp:
             self.res = pickle.load(inp)
-        #except EnvironmentError: # parent of IOError, OSError *and* WindowsError where available
-        #    errorMessage(4)
-        #    return
         
         self.pars = [par.pName for par in self.res.std.parameters]
         self.cases = [case.cName for case in self.res.std.cases]
@@ -38,23 +39,16 @@ class Analysis:
                 OFs.append(row+'_Delta')
         self.ofs = OFs
         self.results = self.res.results
-        #print(self.ofs)
-        
+
+    # Mostra crossplot correlacionando parâmetros com FO    
     def xPlot(self,par1,par2,of1,of2):
         fig = px.scatter( self.results, x=par1, y=par2, color=of1,size = of2, marginal_y="violin",
             marginal_x="violin", trendline="ols",  template="seaborn")
         fig.show()
-        # fig = px.scatter( self.results, x=par1, y=par2, color=of1,size = of2, 
-        #                 color_continuous_scale='rainbow',trendline="ols")
-        # fig.show()
     
-    # def hist2(self,of1,nbins = 10):
-    #     fig = px.histogram(self.results, x=of1, histnorm='probability density',nbins = nbins)
-    #     fig.show()
-
+    # Mostra histogramama com percentis
     def hist( self, of1, nbins = 10):
         x00 = self.results[of1].values
-        #print(x00)
         
         #Figure
         fig = make_subplots(
@@ -107,7 +101,7 @@ class Analysis:
                         showlegend=False,
                         plot_bgcolor='white')
         xrang = [np.min(x00)*.98,np.max(x00)*1.02]
-        #print(xrang)
+        
         fig.update_xaxes(range=xrang)
         fig.update_xaxes(showline=True, linewidth=2, linecolor='black')
         fig.update_yaxes(showline=True, linewidth=2, linecolor='black')

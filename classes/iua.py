@@ -1,14 +1,13 @@
-#from __future__ import with_statement
-import pickle
+'''
+    File name: iua.py
+    Author: Vitor Hespanhol Côrtes
+    Date created: 12/1/2020
+    Date last modified: 12/1/2020
+    Python Version: 3.6
+'''
+
 import numpy as np
-#from pyDOE import lhs
-#from scipy.stats.distributions import norm, truncnorm, lognorm, uniform
-#import matplotlib.pyplot as plt
-#import subprocess
-#import pandas as pd
-#import os
 from datetime import datetime
-#import plotly.express as px
 from .toolkit.tools import errorMessage, createFolder
 from .parameter import Parameter, NormalP, TruncNormalP, LognormalP, UniformP
 from .objfunction import ObjFunction, Np, Wp
@@ -17,12 +16,16 @@ from .analysis import Analysis
 from .study import Study
 from .scheduler import Scheduler
 
+## Class IUA
+# - interface centralizada de interação com o usuário
 class IUA: #Uncertainty Analysis Assistant
     def __init__(self, name = None,key = None):
         self.name = name
         self.key = key
     
-    ##################### ##
+    #####################
+    # Método de inicialização da Interface (UC01)
+    #####################
     def initUA(self):
         now = datetime.now()
         dtstring = now.strftime('%b %d, %Y - %H:%M:%S')
@@ -34,21 +37,6 @@ class IUA: #Uncertainty Analysis Assistant
         introtxt += '\n'
         print(introtxt)
         
-        # name = input("Enter your name: ")
-        # print('=> Name: '+ name)
-        # key = input("Enter your key (1/3): ")
-        # print('=> Key: '+ key)
-        # count = 0
-        # while len(key)!=4:
-        #     count += 1
-        #     print('Key must have four chars/digits!')
-        #     key = input(("Enter your key (%d/3):" % (count+1)))
-        #     print('=> Key: '+ key)
-        #     if not (count<2):
-        #         print('Number of tentatives excedeed!\nGoodbye!')
-        #         return
-        # introtxt +='Owner: %s (%s)\n' % (name,key)
-        # print('\nOwner: %s (%s)\n' % (name,key))
         dictfunc = {1:'1: Create a study',2:'2: Run study',3:'3: Analyse data'}
         choice = input("Select an option:\n%s\n%s\n%s\notherwise: Exit\n" % (dictfunc[1],
                                                                             dictfunc[2],
@@ -59,7 +47,6 @@ class IUA: #Uncertainty Analysis Assistant
             print('Ending Program...\nDone.')
             return
         
-        #self.txt = introtxt
         if choice == '1':
             self.createStudy()
         elif choice == '2':
@@ -67,6 +54,9 @@ class IUA: #Uncertainty Analysis Assistant
         elif choice == '3':
             self.analyse()
         return
+
+    #####################
+    # Método para análise dos resutados (UC04)
     #####################
     def analyse(self):
         introtxt = '===============\n'
@@ -82,7 +72,6 @@ class IUA: #Uncertainty Analysis Assistant
             
             if choice == '1':
                 print('Select Objective Function:')
-                #print(analysis.ofs)
                 for i,row in enumerate(analysis.ofs):
                     print('%d: %s' % (i,row))
                 ofc = input()
@@ -114,6 +103,9 @@ class IUA: #Uncertainty Analysis Assistant
             
         except:
             print('Results Error. Please review study.')
+
+    #####################
+    # Método para execução do estudo (UC03)
     ##################### 
     def runScheduler(self):
         introtxt = '===============\n'
@@ -132,6 +124,9 @@ class IUA: #Uncertainty Analysis Assistant
             print('Results saved!')
         except:
             print('Scheduler Error. Please review study.')
+
+    #####################
+    # Método para criação e configuração do estudo (UC02)
     #####################    
     def createStudy(self):
         introtxt = '===============\n'
@@ -259,5 +254,4 @@ class IUA: #Uncertainty Analysis Assistant
                     print('Study Saved!!!')
                 except:
                     print('Study Incomplete. Please review before saving.')
-        return
-#Study('UA_Injection',r'E:\Dropbox\Mestrado\S3\S3_PFP\Diagramas\teste',200)    
+        return    
